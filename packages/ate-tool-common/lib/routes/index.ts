@@ -1,5 +1,5 @@
-import panel from './dynamic/panel'
-import sidebar from './dynamic/sidebar'
+import panel from './dynamic/panel';
+import sidebar from './dynamic/sidebar';
 
 // const modules = import.meta.glob('./dynamic/**/*.{json,ts,js}', { eager: true });
 
@@ -16,8 +16,8 @@ import sidebar from './dynamic/sidebar'
 
 export default {
   sidebar,
-  panel
-}
+  panel,
+};
 
 // type TRouteItem = {
 //     name: string;

@@ -1,7 +1,8 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
-import PanelView from '../views/PanelView.vue'
-import SidebarView from '../views/SidebarView.vue'
-import { routes } from '@hf/ate-tool-common'
+import { routes } from '@hf/ate-tool-common';
+import { createRouter, createWebHashHistory } from 'vue-router';
+
+import PanelView from '../views/PanelView.vue';
+import SidebarView from '../views/SidebarView.vue';
 
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
@@ -9,7 +10,7 @@ const router = createRouter({
     {
       path: routes.panel.panelA.path,
       name: routes.panel.panelA.name,
-      component: PanelView
+      component: PanelView,
     },
     {
       path: routes.sidebar.sidebarA.path,
@@ -17,9 +18,9 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: SidebarView
-    }
-  ]
-})
+      component: SidebarView,
+    },
+  ],
+});
 
-export default router
+export default router;

@@ -1,47 +1,48 @@
 <script setup lang="ts">
-import { useCommand } from '@/hooks/use-command'
-import getMessenger from '@/utils/messenger'
-import { messages } from '@hf/ate-tool-common'
-import { onMounted, reactive, toRefs } from 'vue'
-import carPath from '@/assets/car.jpg'
-import { usePublicPath } from '@/hooks/use-global-definition'
+  import { messages } from '@hf/ate-tool-common';
+  import { onMounted, reactive, toRefs } from 'vue';
 
-const messenger = getMessenger()
-const carUrl = usePublicPath(carPath)
-const { sendNotification } = useCommand()
-const {
-  panel: { panelA },
-  sidebar: { sidebarA }
-} = messages
-const state = reactive({
-  message: '',
-  receivedMessage: {
+  import carPath from '@/assets/car.jpg';
+  import { useCommand } from '@/hooks/use-command';
+  import { usePublicPath } from '@/hooks/use-global-definition';
+  import getMessenger from '@/utils/messenger';
+
+  const messenger = getMessenger();
+  const carUrl = usePublicPath(carPath);
+  const { sendNotification } = useCommand();
+  const {
+    panel: { panelA },
+    sidebar: { sidebarA },
+  } = messages;
+  const state = reactive({
     message: '',
-    from: ''
-  }
-})
+    receivedMessage: {
+      message: '',
+      from: '',
+    },
+  });
 
-onMounted(async () => {
-  // 接受传递给panelA的消息
-  await messenger.onNotification<{ message: string; from: string }>(
-    { method: panelA.webview.methods.MESSAGE_TO_PANEL },
-    ({ message, from }) => {
-      state.receivedMessage = { message, from }
-    }
-  )
-})
+  onMounted(async () => {
+    // 接受传递给panelA的消息
+    await messenger.onNotification<{ message: string; from: string }>(
+      { method: panelA.webview.methods.MESSAGE_TO_PANEL },
+      ({ message, from }) => {
+        state.receivedMessage = { message, from };
+      },
+    );
+  });
 
-// 给sidebarA传递消息
-const clickToSendMessage = async () => {
-  await sendNotification(
-    { method: sidebarA.webview.methods.MESSAGE_TO_SIDEBAR },
-    { type: 'webview', webviewType: 'sidebar-a-view' },
-    { message: message.value, from: 'panel-a' }
-  )
-}
+  // 给sidebarA传递消息
+  const clickToSendMessage = async () => {
+    await sendNotification(
+      { method: sidebarA.webview.methods.MESSAGE_TO_SIDEBAR },
+      { type: 'webview', webviewType: 'sidebar-a-view' },
+      { message: message.value, from: 'panel-a' },
+    );
+  };
 
-const { message, receivedMessage } = toRefs(state)
-messenger.start()
+  const { message, receivedMessage } = toRefs(state);
+  messenger.start();
 </script>
 
 <template>
@@ -59,14 +60,14 @@ messenger.start()
 </template>
 
 <style>
-.example-block {
-  margin-bottom: 20px;
-  padding-left: 20px;
-}
+  .example-block {
+    margin-bottom: 20px;
+    padding-left: 20px;
+  }
 
-.sidebar {
-  width: 100%;
-  height: 100vh;
-  background-color: #666;
-}
+  .sidebar {
+    width: 100%;
+    height: 100vh;
+    background-color: #666;
+  }
 </style>

@@ -1,7 +1,7 @@
-import { messages } from "@hf/ate-tool-common";
-import { onMounted, ref } from "vue";
+import { messages } from '@hf/ate-tool-common';
+import { onMounted, ref } from 'vue';
 
-import getMessenger from "@/utils/messenger";
+import getMessenger from '@/utils/messenger';
 
 export function useVscColorTheme() {
   const colorTheme = ref<string>();
@@ -15,7 +15,7 @@ export function useVscColorTheme() {
   onMounted(async () => {
     colorTheme.value = await messenger.sendRequest(
       { method: sidebarAExtension.methods.FETCH_THEME },
-      sidebarAExtension.participant
+      sidebarAExtension.participant,
     );
   });
 
@@ -23,7 +23,7 @@ export function useVscColorTheme() {
     await messenger.sendNotification(
       { method: sidebarAExtension.methods.UPDATE_THEME },
       sidebarAExtension.participant,
-      colorTheme
+      colorTheme,
     );
   };
 
@@ -32,39 +32,39 @@ export function useVscColorTheme() {
 
 export const vscColorThemeOptions = [
   {
-    label: "Light High Contrast",
-    value: "Default High Contrast Light",
+    label: 'Light High Contrast',
+    value: 'Default High Contrast Light',
   },
   {
-    label: "Light (Visual Studio)",
-    value: "Visual Studio Light",
+    label: 'Light (Visual Studio)',
+    value: 'Visual Studio Light',
   },
   {
-    label: "Light Modern",
-    value: "Default Light Modern",
+    label: 'Light Modern',
+    value: 'Default Light Modern',
   },
   {
-    label: "Light+",
-    value: "Default Light+",
+    label: 'Light+',
+    value: 'Default Light+',
   },
   {
-    label: "Dark High Contrast",
-    value: "Default High Contrast",
+    label: 'Dark High Contrast',
+    value: 'Default High Contrast',
   },
   {
-    label: "Dark (Visual Studio)",
-    value: "Visual Studio Dark",
+    label: 'Dark (Visual Studio)',
+    value: 'Visual Studio Dark',
   },
   {
-    label: "Dark Modern",
-    value: "Default Dark Modern",
+    label: 'Dark Modern',
+    value: 'Default Dark Modern',
   },
   {
-    label: "Dark+",
-    value: "Default Dark+",
+    label: 'Dark+',
+    value: 'Default Dark+',
   },
   {
-    label: "Red",
-    value: "Red",
+    label: 'Red',
+    value: 'Red',
   },
 ];

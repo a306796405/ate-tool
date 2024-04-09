@@ -1,13 +1,13 @@
-import { Messenger } from 'vscode-messenger-webview'
+import { Messenger } from 'vscode-messenger-webview';
 
-let messenger: Messenger
+let messenger: Messenger;
 
 function getMessenger() {
   if (!messenger) {
-    const vscode = acquireVsCodeApi()
-    messenger = new Messenger(vscode, { debugLog: true })
+    const vscode = acquireVsCodeApi();
+    messenger = new Messenger(vscode, { debugLog: true });
   }
-  return messenger
+  return messenger;
 }
 
-export default getMessenger
+export default getMessenger;

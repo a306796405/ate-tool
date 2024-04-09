@@ -5,12 +5,12 @@
   "type": "module",
   "scripts": {
     "build": "run-p type-check \"build-only {@}\" --",
+    "build-only": "vite build",
     "preview": "vite preview",
     "test:unit": "vitest",
-    "build-only": "vite build",
     "type-check": "vue-tsc --noEmit --skipLibCheck",
-    "watch-only": "vite build --watch --emptyOutDir",
-    "watch": "run-p type-check \"watch-only {@}\" --"
+    "watch": "run-p type-check \"watch-only {@}\" --",
+    "watch-only": "vite build --watch --emptyOutDir"
   },
   "dependencies": {}
 }

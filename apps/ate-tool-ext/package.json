@@ -1,12 +1,8 @@
 {
   "name": "ate-tool-ext",
   "displayName": "hf ate tool extension",
-  "description": "ate tool extension",
   "version": "0.0.1",
-  "publisher": "Jeffery",
-  "engines": {
-    "vscode": "^1.87.0"
-  },
+  "description": "ate tool extension",
   "categories": [
     "Other"
   ],
@@ -14,32 +10,18 @@
     "type": "git",
     "url": "https://github.com/a306796405/ate-tool.git"
   },
-  "activationEvents": [],
+  "publisher": "Jeffery",
   "main": "./dist/ext/extension.js",
   "scripts": {
-    "vscode:prepublish": "pnpm build-rollup",
     "build": "tsc -p ./",
     "build-rollup": "rollup -c",
-    "watch": "tsc -watch -p ./",
-    "pretest": "pnpm run compile && pnpm run lint",
     "lint": "eslint src --ext ts",
-    "test": "vscode-test",
     "package": "vsce package --no-dependencies",
-    "publish": "vsce publish"
-  },
-  "dependencies": {
-    "html-modifier": "^1.2.0"
-  },
-  "devDependencies": {
-    "@types/mocha": "^10.0.6",
-    "@types/vscode": "^1.87.0",
-    "@vscode/test-cli": "^0.0.8",
-    "@vscode/test-electron": "^2.3.9",
-    "@vscode/vsce": "^2.24.0",
-    "@rollup/plugin-commonjs": "^25.0.7",
-    "@rollup/plugin-json": "^6.1.0",
-    "@rollup/plugin-node-resolve": "^15.2.3",
-    "rollup-plugin-typescript2": "^0.36.0"
+    "publish": "vsce publish",
+    "pretest": "pnpm run compile && pnpm run lint",
+    "test": "vscode-test",
+    "vscode:prepublish": "pnpm build-rollup",
+    "watch": "tsc -watch -p ./"
   },
   "contributes": {
     "commands": [
@@ -49,15 +31,6 @@
         "category": "ate-tool"
       }
     ],
-    "viewsContainers": {
-      "activitybar": [
-        {
-          "id": "sidebar-view-container",
-          "title": "sidebar view example",
-          "icon": "assets/icon01.svg"
-        }
-      ]
-    },
     "views": {
       "sidebar-view-container": [
         {
@@ -66,6 +39,33 @@
           "name": "sidebar view"
         }
       ]
+    },
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "sidebar-view-container",
+          "title": "sidebar view example",
+          "icon": "assets/icon01.svg"
+        }
+      ]
     }
+  },
+  "activationEvents": [],
+  "dependencies": {
+    "html-modifier": "^1.2.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@types/mocha": "^10.0.6",
+    "@types/vscode": "^1.87.0",
+    "@vscode/test-cli": "^0.0.8",
+    "@vscode/test-electron": "^2.3.9",
+    "@vscode/vsce": "^2.24.0",
+    "rollup-plugin-typescript2": "^0.36.0"
+  },
+  "engines": {
+    "vscode": "^1.87.0"
   }
 }

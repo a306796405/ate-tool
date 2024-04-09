@@ -1,25 +1,25 @@
 {
   "name": "@hf/ate-tool-common",
-  "private": true,
   "version": "0.0.0",
+  "private": true,
   "type": "module",
-  "files": [
-    "dist",
-    "index.d.ts"
-  ],
-  "main": "./dist/ext-common.umd.cjs",
-  "module": "./dist/ext-common.js",
-  "types": "./dist/main.d.ts",
   "exports": {
     "types": "./dist/main.d.ts",
     "import": "./dist/ext-common.js",
     "require": "./dist/ext-common.umd.cjs"
   },
+  "main": "./dist/ext-common.umd.cjs",
+  "module": "./dist/ext-common.js",
+  "types": "./dist/main.d.ts",
+  "files": [
+    "dist",
+    "index.d.ts"
+  ],
   "scripts": {
-    "watch": "pnpm type-check && vite build --watch",
     "build": "pnpm type-check && vite build",
     "test": "vitest",
-    "type-check": "vue-tsc --noEmit --skipLibCheck"
+    "type-check": "vue-tsc --noEmit --skipLibCheck",
+    "watch": "pnpm type-check && vite build --watch"
   },
   "devDependencies": {}
 }
