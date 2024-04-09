@@ -1,0 +1,13 @@
+{
+  "recommendations": [
+    "Vue.volar",
+    "dbaeumer.vscode-eslint",
+    "stylelint.vscode-stylelint",
+    "esbenp.prettier-vscode",
+    // "antfu.iconify",
+    // "antfu.unocss",
+    "mikestead.dotenv",
+    "dbaeumer.vscode-eslint",
+    "ms-vscode.extension-test-runner"
+  ]
+}

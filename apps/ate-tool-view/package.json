@@ -1,0 +1,16 @@
+{
+  "name": "@hf/ate-tool-view",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "run-p type-check \"build-only {@}\" --",
+    "preview": "vite preview",
+    "test:unit": "vitest",
+    "build-only": "vite build",
+    "type-check": "vue-tsc --noEmit --skipLibCheck",
+    "watch-only": "vite build --watch --emptyOutDir",
+    "watch": "run-p type-check \"watch-only {@}\" --"
+  },
+  "dependencies": {}
+}
