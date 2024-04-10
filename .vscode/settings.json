@@ -9,17 +9,6 @@
     "comments": true,
     "strings": true
   },
-  "editor.codeActionsOnSave": {
-    "source.fixAll": "explicit",
-    "source.fixAll.eslint": "explicit",
-    "source.fixAll.stylelint": "explicit"
-  },
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[jsonc]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
-  },
   "files.eol": "\n",
   "search.exclude": {
     "**/node_modules": true,
@@ -67,7 +56,20 @@
     "**/tmp/**": true,
     "**/bower_components/**": true,
     "**/dist/**": true,
+    "**/out/**": true,
     "**/yarn.lock": true
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit",
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.stylelint": "explicit"
+  },
+  "[vue]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit",
+      "source.fixAll.stylelint": "explicit"
+    },
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "i18n-ally.keystyle": "nested",
   "i18n-ally.sortKeys": true,
@@ -85,4 +87,49 @@
   "i18n-ally.localesPaths": [
     "src/lang"
   ],
+  "cSpell.words": [
+    "antd",
+    "antv",
+    "brotli",
+    "browserslist",
+    "codemirror",
+    "commitlint",
+    "cropperjs",
+    "echarts",
+    "esnext",
+    "esno",
+    "iconify",
+    "INTLIFY",
+    "lintstagedrc",
+    "logicflow",
+    "mockjs",
+    "nprogress",
+    "pinia",
+    "pnpm",
+    "qrcode",
+    "sider",
+    "sortablejs",
+    "stylelint",
+    "tailwindcss",
+    "tinymce",
+    "unocss",
+    "unref",
+    "vben",
+    "vditor",
+    "Vite",
+    "vitejs",
+    "vueuse",
+    "zxcvbn"
+  ],
+  // 控制相关文件嵌套展示
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.expand": false,
+  "explorer.fileNesting.patterns": {
+    "*.ts": "$(capture).test.ts, $(capture).test.tsx",
+    "*.tsx": "$(capture).test.ts, $(capture).test.tsx",
+    "*.env": "$(capture).env.*",
+    "CHANGELOG.md": "CHANGELOG*",
+    "package.json": "pnpm-lock.yaml,pnpm-workspace.yaml,LICENSE,.gitattributes,.gitignore,.gitpod.yml,CNAME,README*,.npmrc,.browserslistrc",
+    ".eslintrc.cjs": ".eslintignore,.prettierignore,.stylelintignore,.commitlintrc.*,.prettierrc.*,.stylelintrc.*"
+  },
 }

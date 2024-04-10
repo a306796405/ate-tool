@@ -5,9 +5,9 @@
     "stylelint.vscode-stylelint",
     "esbenp.prettier-vscode",
     // "antfu.iconify",
-    // "antfu.unocss",
+    "antfu.unocss",
     "mikestead.dotenv",
-    "dbaeumer.vscode-eslint",
-    "ms-vscode.extension-test-runner"
+    "ms-vscode.extension-test-runner",
+    "lokalise.i18n-ally",
   ]
 }
