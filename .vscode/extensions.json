@@ -4,7 +4,7 @@
     "dbaeumer.vscode-eslint",
     "stylelint.vscode-stylelint",
     "esbenp.prettier-vscode",
-    // "antfu.iconify",
+    "antfu.iconify",
     "antfu.unocss",
     "mikestead.dotenv",
     "ms-vscode.extension-test-runner",

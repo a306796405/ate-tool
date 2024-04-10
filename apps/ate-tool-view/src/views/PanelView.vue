@@ -6,6 +6,7 @@
   import { useCommand } from '@/hooks/use-command';
   import { usePublicPath } from '@/hooks/use-global-definition';
   import getMessenger from '@/utils/messenger';
+  import SvgIcon from '@/components/SvgIcon/index.vue';
 
   const messenger = getMessenger();
   const carUrl = usePublicPath(carPath);
@@ -56,6 +57,26 @@
       <div>发送者： {{ receivedMessage.from }}</div>
       <img :src="carUrl" alt="小米汽车" width="200" />
     </div>
+    <div className="example-block">
+      <ul class="icon-list">
+        <li class="icon-item">
+          <svg-icon icon-class="lucide:arrow-down-to-line" />
+          <span>lucide:arrow-down-to-line</span>
+        </li>
+        <li class="icon-item">
+          <svg-icon :icon-class="'lucide:arrow-down-to-line'" />
+          <span>lucide:arrow-down-to-line</span>
+        </li>
+        <li class="icon-item">
+          <svg-icon :icon-class="'lucide:arrow-down-to-line'" />
+          <span>lucide:arrow-down-to-line</span>
+        </li>
+        <li class="icon-item">
+          <svg-icon :icon-class="'lucide:arrow-down-to-line'" />
+          <span>lucide:arrow-down-to-line</span>
+        </li>
+      </ul>
+    </div>
   </main>
 </template>
 
@@ -69,5 +90,17 @@
     width: 100%;
     height: 100vh;
     background-color: #666;
+  }
+
+  .icon-list {
+    display: flex;
+
+    .icon-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100px;
+      height: 100px;
+    }
   }
 </style>

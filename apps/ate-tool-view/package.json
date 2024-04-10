@@ -6,11 +6,11 @@
   "scripts": {
     "build": "run-p type-check \"build-only {@}\" --",
     "build-only": "vite build",
-    "preview": "vite preview",
-    "test:unit": "vitest",
+    "coverage": "vitest run --coverage",
+    "test": "vitest",
     "type-check": "vue-tsc --noEmit --skipLibCheck",
     "watch": "run-p type-check \"watch-only {@}\" --",
     "watch-only": "vite build --watch --emptyOutDir"
   },
-  "dependencies": {}
+  "devDependencies": {}
 }
