@@ -91,7 +91,7 @@
   messenger.start();
 </script>
 
-<style>
+<style lang="scss">
   .example-block {
     margin-bottom: 20px;
     padding-left: 20px;
@@ -100,6 +100,6 @@
   .sidebar {
     width: 100%;
     height: 100vh;
-    background-color: #666;
+    background-color: $menu-background;
   }
 </style>

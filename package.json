@@ -35,6 +35,7 @@
     "@hf/ate-tool-common": "workspace:*",
     "@vueuse/core": "~10.9.0",
     "dayjs": "~1.11.10",
+    "parse5": "^7.1.2",
     "path-browserify": "^1.0.1",
     "pinia": "^2.1.7",
     "vscode-messenger": "^0.4.5",
@@ -71,6 +72,7 @@
     "prettier-plugin-packagejson": "^2.4.11",
     "prettier-plugin-tailwindcss": "^0.2.3",
     "rimraf": "~5.0.5",
+    "sass": "^1.74.1",
     "stylelint": "~16.3.1",
     "stylelint-config-property-sort-order-smacss": "^10.0.0",
     "stylelint-config-recommended": "~14.0.0",
@@ -79,11 +81,14 @@
     "stylelint-order": "~6.0.4",
     "stylelint-prettier": "^5.0.0",
     "typescript": "^5.4.4",
+    "unocss": "^0.58.9",
+    "unplugin-icons": "^0.18.5",
     "vite": "^5.2.0",
     "vite-plugin-dts": "^3.8.1",
     "vite-plugin-vue-devtools": "^7.0.18",
     "vitest": "^1.4.0",
     "vue-eslint-parser": "^9.4.2",
+    "vite-plugin-svg-icons": "^2.0.1",
     "vue-tsc": "^2.0.6"
   }
 }
