@@ -80,15 +80,16 @@
     "stylelint-config-standard": "~36.0.0",
     "stylelint-order": "~6.0.4",
     "stylelint-prettier": "^5.0.0",
+    "terser": "^5.30.3",
     "typescript": "^5.4.4",
     "unocss": "^0.58.9",
     "unplugin-icons": "^0.18.5",
     "vite": "^5.2.0",
     "vite-plugin-dts": "^3.8.1",
+    "vite-plugin-svg-icons": "^2.0.1",
     "vite-plugin-vue-devtools": "^7.0.18",
     "vitest": "^1.4.0",
     "vue-eslint-parser": "^9.4.2",
-    "vite-plugin-svg-icons": "^2.0.1",
     "vue-tsc": "^2.0.6"
   }
 }

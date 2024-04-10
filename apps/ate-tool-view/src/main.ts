@@ -1,3 +1,4 @@
+import 'uno.css';
 import './assets/main.css';
 
 import { createPinia } from 'pinia';
