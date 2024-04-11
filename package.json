@@ -1,7 +1,8 @@
 {
-  "name": "eslint-vite-project",
-  "version": "0.0.0",
+  "name": "ate-tool",
+  "version": "0.0.1",
   "private": true,
+  "publisher": "accotest",
   "type": "module",
   "scripts": {
     "test:unit": "vitest",
@@ -30,6 +31,11 @@
     "build:common": "pnpm -F @hf/ate-tool-common build",
     "clean:dist": "rimraf apps/ate-tool-ext/dist",
     "package": "pnpm run -F ate-tool-ext package"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-git"
+    }
   },
   "dependencies": {
     "@hf/ate-tool-common": "workspace:*",
