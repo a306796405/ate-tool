@@ -12,5 +12,7 @@
     "watch": "run-p type-check \"watch-only {@}\" --",
     "watch-only": "vite build --watch --emptyOutDir"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@vitest/coverage-v8": "^1.4.0"
+  }
 }

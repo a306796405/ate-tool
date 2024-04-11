@@ -1,5 +1,6 @@
-import { fileURLToPath, URL } from 'node:url';
+/// <reference types="vitest" />
 
+import { fileURLToPath, URL } from 'node:url';
 import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
 import { ConfigEnv, defineConfig, /* loadEnv, */ UserConfig } from 'vite';
@@ -8,6 +9,7 @@ import UnoCSS from 'unocss/vite';
 import Icons from 'unplugin-icons/vite';
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
 import { resolve } from 'path';
+import { configDefaults } from 'vitest/config';
 
 const pathSrc = resolve(__dirname, 'src');
 //  https://cn.vitejs.dev/config
@@ -90,6 +92,15 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
             @import "@/styles/variable.scss";
           `,
         },
+      },
+    },
+    test: {
+      globals: true,
+      environment: 'jsdom',
+      coverage: {
+        provider: 'v8',
+        reporter: ['text', 'html'],
+        exclude: [...configDefaults.coverage.exclude!, 'src/views'],
       },
     },
   };

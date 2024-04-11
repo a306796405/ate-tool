@@ -30,7 +30,9 @@
     "dev:common": "pnpm -F @hf/ate-tool-common watch",
     "build:common": "pnpm -F @hf/ate-tool-common build",
     "clean:dist": "rimraf apps/ate-tool-ext/dist",
-    "package": "pnpm run -F ate-tool-ext package"
+    "package": "pnpm run -F ate-tool-ext package",
+    "test": "pnpm -F ate-tool-view test",
+    "coverage": "pnpm -F ate-tool-view coverage"
   },
   "config": {
     "commitizen": {
