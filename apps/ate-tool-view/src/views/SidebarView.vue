@@ -1,7 +1,7 @@
 <template>
   <div class="sidebar">
-    <img alt="Vue logo" class="logo" :src="carUrl" width="125" height="125" />
     <div class="example-block">
+      <h2>打开panel</h2>
       <button @click="clickToOpenPanel">打开panel窗口</button>
     </div>
     <div class="example-block">
@@ -22,20 +22,34 @@
       <div>接受到的消息： {{ receivedMessage.message }}</div>
       <div>发送者： {{ receivedMessage.from }}</div>
     </div>
+    <div className="example-block">
+      <ul class="icon-list">
+        <li class="icon-item">
+          <Icon icon="captcha" :svg="true" />
+        </li>
+        <li class="icon-item">
+          <Icon icon="mdi:ab-testing" />
+        </li>
+        <li class="icon-item">
+          <Icon icon="mdi:access-point" />
+        </li>
+        <li class="icon-item">
+          <Icon icon="mdi:alpha-a-circle" />
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
   import getMessenger from '@/utils/messenger';
   import { messages } from '@hf/ate-tool-common';
-  import carPath from '@/assets/car.jpg';
-  import { usePublicPath } from '@/hooks/use-global-definition';
   import { useVscColorTheme } from '@/hooks/use-vsc-color-theme';
   import { useCommand } from '@/hooks/use-command';
   import { onMounted, reactive, toRefs } from 'vue';
+  import Icon from '@/components/Icon/index.vue';
 
   // Webview 公共资源地址示例
-  const carUrl = usePublicPath(carPath);
   const messenger = getMessenger();
   const { sendNotification } = useCommand();
   const {
@@ -101,5 +115,18 @@
     width: 100%;
     height: 100vh;
     background-color: $menu-background;
+  }
+
+  .icon-list {
+    display: flex;
+
+    .icon-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100px;
+      height: 100px;
+      font-size: 30px;
+    }
   }
 </style>

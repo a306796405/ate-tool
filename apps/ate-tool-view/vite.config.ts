@@ -8,6 +8,8 @@ import VueDevTools from 'vite-plugin-vue-devtools';
 import UnoCSS from 'unocss/vite';
 import Icons from 'unplugin-icons/vite';
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
+import AutoImport from 'unplugin-auto-import/vite';
+import Components from 'unplugin-vue-components/vite';
 import { resolve } from 'path';
 import { configDefaults } from 'vitest/config';
 
@@ -22,6 +24,10 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
       VueDevTools(),
       UnoCSS({
         hmrTopLevelAwait: false,
+      }),
+      AutoImport({}),
+      Components({
+        resolvers: [],
       }),
       Icons({
         // 自动安装图标库
